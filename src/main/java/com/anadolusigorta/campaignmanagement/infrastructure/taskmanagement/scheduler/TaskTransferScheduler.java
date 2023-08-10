@@ -29,12 +29,10 @@ public class TaskTransferScheduler {
     private final TaskJpaRepository taskJpaRepository;
     private final CmTaskProcessHistoryRepository cmTaskProcessHistoryRepository;
 
-    @Value("${TASK_ENABLED}")
-    private Boolean taskEnabled;
 
     @Scheduled(cron = "${cron.transferTaskScheduler}")
     public void processTaskState() {
-        if (taskEnabled) {
+        if (false) {
             var knimeTasks = knimeTaskJpaRepository.findAllByIsTransferredFalse();
             var taskState = taskStateTypeJpaRepository.findByName(Constants.TASK_STATE_OPEN);
 

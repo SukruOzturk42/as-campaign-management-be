@@ -35,15 +35,14 @@ public class SuccessClosedTaskScheduler {
     private final TaskManagementSchedulerConfigurationProperties taskManagementSchedulerConfigurationProperties;
 
 
-    @Value("${TASK_ENABLED}")
-    private Boolean taskEnabled;
+
 
     @Scheduled(cron = "${cron.successTaskCloseScheduler}")
     public void closeTasks(){
 
         log.info("Success Task Close scheduler started.");
 
-        if (taskEnabled) {
+        if (false) {
             try {
 
                 var taskStateTypeCloseSuccess = taskStateTypeJpaRepository.findByName(Constants.TASK_STATE_CLOSED_SUCCESS)

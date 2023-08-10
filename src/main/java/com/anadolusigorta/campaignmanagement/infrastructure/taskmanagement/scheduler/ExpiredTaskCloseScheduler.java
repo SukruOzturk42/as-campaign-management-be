@@ -33,14 +33,12 @@ public class ExpiredTaskCloseScheduler {
     private final TaskStateInformationJpaRepository taskStateInformationJpaRepository;
     private final CmTaskProcessHistoryRepository cmTaskProcessHistoryRepository;
 
-    @Value("${TASK_ENABLED}")
-    private Boolean taskEnabled;
 
     //@Scheduled(fixedDelay = 1000)
     @Scheduled(cron = "${cron.expiredTaskCloseScheduler}")
     public void closedExpiredTasks(){
 
-        if(taskEnabled){
+        if(false){
 
             log.info("Expired Task scheduler started");
 

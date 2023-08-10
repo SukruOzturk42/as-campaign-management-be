@@ -24,8 +24,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class VersionStartScheduler {
 
-    @Value("${TASK_ENABLED}")
-    private Boolean taskEnabled;
+
 
     private final CampaignInformationJpaRepository campaignInformationJpaRepository;
     private final CustomerCampaignJpaRepository customerCampaignJpaRepository;
@@ -35,7 +34,7 @@ public class VersionStartScheduler {
     //@Scheduled(cron = "0 */30 * ? * *")
     public void changeVersion() {
 
-        if (taskEnabled) {
+        if (false) {
             var campaignStatusPendingVersion = campaignStatusJpaRepository
                     .findByCampaignStatus(CampaignStatusEnum.PENDING_VERSION_START_DATE)
                     .orElseThrow(() -> new CampaignManagementException("campaign.status.not.found"));

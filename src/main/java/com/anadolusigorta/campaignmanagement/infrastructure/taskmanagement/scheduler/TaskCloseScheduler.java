@@ -44,15 +44,14 @@ public class TaskCloseScheduler {
     private final AsRobotPolicyProposalJpaRepository asRobotPolicyProposalJpaRepository;
 
 
-    @Value("${TASK_ENABLED}")
-    private Boolean taskEnabled;
+
 
     //@Scheduled(fixedDelay = 1000L)
     @Scheduled(cron = "${cron.taskCloseScheduler}")
     public void closeTasks() {
 
 
-        if (taskEnabled) {
+        if (false) {
             log.info("Task Close scheduler started.");
             try {
 

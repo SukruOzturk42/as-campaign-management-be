@@ -22,8 +22,7 @@ public class UserTokenScheduler {
 
     private final UserTokenJpaRepository userTokenJpaRepository;
 
-    @Value("${TASK_ENABLED}")
-    private Boolean taskEnabled;
+
 
     @Scheduled(cron = "${cron.deleteTokenScheduler}")
     public void deleteExpiredUserTokens() {
