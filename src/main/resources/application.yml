@@ -1,5 +1,5 @@
 server:
-  port: 5000
+  port: 8080
 spring:
   datasource:
     url: jdbc:mysql://db-mysql-fra1-77412-do-user-8475099-0.b.db.ondigitalocean.com:25060/campus
