@@ -1,0 +1,8 @@
+package com.anadolusigorta.campaignmanagement.infrastructure.customerpolicyreward.jpa.repository;
+
+import com.anadolusigorta.campaignmanagement.infrastructure.customerpolicyreward.jpa.entity.PolicySaleGiftCodeEntity;
+import com.anadolusigorta.campaignmanagement.infrastructure.customerpolicyreward.jpa.entity.PolicySaleRewardCampaignEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PolicySaleRewardCampaignJpaRepository extends JpaRepository<PolicySaleRewardCampaignEntity,Long> {
+}

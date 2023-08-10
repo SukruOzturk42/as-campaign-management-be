@@ -1,0 +1,90 @@
+server:
+  port: 5000
+spring:
+  datasource:
+    url: jdbc:mysql://db-mysql-fra1-77412-do-user-8475099-0.b.db.ondigitalocean.com:25060/campus
+    username: doadmin
+    password: AVNS_iMv1YhoMJSmLXChUMXi
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+swagger:
+  title: Campaign Management
+  description: Spring Boot Campaign Management REST API
+  license: Apache 2.0
+  licenseUrl: "https://www.apache.org/licenses/LICENSE-2.0"
+  version: 1.0
+
+security:
+  token:
+    expireTimeInMinutes: 360
+    activeSessionCount: 15
+    secretKey: ODEONCAMPUS
+cron:
+  cacheLoaderScheduler: 0 0 3 * * ?
+  cacheLoaderSchedulerEnabled: true
+  saleRewardScheduler: 0 0 11,13,15 ? * *
+  policySaleRewardGiftScheduler: 0 0 1 ? * *
+  campaignStatusUpdateScheduler: 0 0 3 ? * *
+  campaignStatusUpdateSchedulerEnabled: true
+  expiredSaleRewardScheduler: 0 0 1 * * ?
+  nocStatusSaleRewardScheduler: 0 0 1 * * ?
+  expiredTaskCloseScheduler: 0 */20 * ? * *
+  taskCloseScheduler: 0 */20 * ? * *
+  successTaskCloseScheduler: 0 */20 * ? * *
+  transferTaskScheduler: 0 */20 * ? * *
+  deleteTokenScheduler: 0 0 * ? * *
+
+
+
+noc.report.status:
+  error: -1
+  waiting: 0
+  sent: 1
+  delivered: 2
+  campus: 10
+
+reward.send:
+  tryCount: 10
+  lastSendDayCount: 30
+
+
+content.management:
+  attribute-types: GonderenID,OrganizasyonID,EklenmeTarihi,campaignId,groupCode,rewardName
+redis:
+  host: kampus-redis-uat.kampus-redis-uat
+  port: 6379
+  time-to-live: 60
+#  password: kam25!red77
+
+sale.reward:
+  job-enabled: true
+  mail:
+    to-list:
+      - buseyilmaz@anadolusigorta.com.tr
+      - sukruozturk@anadolusigorta.com.tr
+      - fatihkuruca@anadolusigorta.com.tr
+      - hayridag@anadolusigorta.com.tr
+    cc-list:
+      - mertkasimagaoglu@anadolusigorta.com.tr
+
+
+  gift-template-id: 1745
+  gift-code-template-id: 1746
+  gift-code-sms-template-id: 1758
+  gift-sms-template-id: 1769
+
+
+task.management:
+  robotJobEnabled: true
+  saleJobEnabled: true
+  expiredTaskJobEnabled: true
+  digitalAgencies:
+    - 10038
+    - 10039
+    - 10040
+    - 10042
+    - 10043
+    - 10044
